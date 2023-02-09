@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('login');
 });
+
+Route::get('administrator', function () {
+    return view('pages.administrator.dashboard');
+})->name('web.administrator');
