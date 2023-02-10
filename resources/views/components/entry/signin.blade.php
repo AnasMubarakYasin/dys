@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{ asset('/icons/logo.png') }}" type="image/x-icon">
-    <title>Document</title>
+    <title>Login</title>
     @wireUiScripts
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @vite('resources/css/tailwind.css')
