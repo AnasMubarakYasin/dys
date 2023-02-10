@@ -195,7 +195,7 @@
     <!-- Content -->
     <main id="application-main" class="w-full p-4 sm:px-8 sm:py-4 sm:pl-72 transition-all">
         <!-- Page Heading -->
-        <ol class="flex items-center whitespace-nowrap min-w-0 pb-3" aria-label="Breadcrumb">
+        {{-- <ol class="flex items-center whitespace-nowrap min-w-0 pb-3" aria-label="Breadcrumb">
             <li class="text-sm">
                 <a class="flex items-center text-gray-500 hover:text-blue-600" href="#">
                     <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
@@ -234,7 +234,7 @@
             <li class="text-sm font-semibold text-gray-800 truncate dark:text-gray-200" aria-current="page">
                 Application
             </li>
-        </ol>
+        </ol> --}}
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
