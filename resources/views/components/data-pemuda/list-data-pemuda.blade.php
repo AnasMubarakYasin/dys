@@ -167,8 +167,8 @@
         <nav class="hs-accordion-group p-6 w-full flex flex-col flex-wrap" data-hs-accordion-always-open>
             <ul class="space-y-1.5">
                 <li>
-                    <a class="flex capitalize items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-900 dark:text-white"
-                        href="javascript:;">
+                    <a class="flex capitalize items-center gap-x-3.5 py-2 px-2.5  text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-900 dark:text-white"
+                        href="{{ route('web.administrator') }}">
                         <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -179,7 +179,7 @@
                         dashboard
                     </a>
                 </li>
-                <li><a class="flex capitalize items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300"
+                <li><a class="flex capitalize items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300"
                         href="{{ route('web.administrator.data_pemuda') }}">
                         <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" viewBox="0 0 16 16">
@@ -210,14 +210,15 @@
         <ol class="flex items-center whitespace-nowrap min-w-0 pb-3" aria-label="Breadcrumb">
             <li class="text-sm">
                 <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
-                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
-                        height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
-                        <path fill-rule="evenodd"
-                            d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600"
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                        <path
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                     </svg>
-                    home
+                    data pemuda
                     <svg class="flex-shrink-0 mx-3 overflow-visible h-2.5 w-2.5 text-gray-400 dark:text-gray-600"
                         width="16" height="16" viewBox="0 0 16 16" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -234,206 +235,210 @@
                             d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z" />
                         <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                     </svg>
-                    total jumlah pemuda perkota
+                    tabel data pemuda
                 </a>
             </li>
         </ol>
-        <div class="grid grid-cols-2 sm:grid-cols-4 pb-3 gap-4">
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
-            </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+        {{-- table --}}
+        <div class="flex flex-col">
+            <div class="-m-1.5 overflow-x-auto">
+                <div class="p-1.5 min-w-full inline-block align-middle">
+                    <div class="border rounded-lg divide-y divide-gray-200 dark:border-gray-700 dark:divide-gray-700">
+                        <div class="flex justify-between py-3 px-4">
+                            <div class="relative max-w-xs">
+                                <label for="hs-table-with-pagination-search" class="sr-only">Search</label>
+                                <input type="text" name="hs-table-with-pagination-search"
+                                    id="hs-table-with-pagination-search"
+                                    class="p-3 pl-10 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
+                                    placeholder="Search for items">
+                                <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none pl-4">
+                                    <svg class="h-3.5 w-3.5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <button type="button"
+                                class="capitalize py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
+                                tambah
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+
+                            </button>
+                        </div>
+                        <div class="overflow-hidden">
+                            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                                <thead class="bg-gray-50 dark:bg-gray-700">
+                                    <tr>
+                                        <th scope="col" class="py-3 px-4 pr-0">
+                                            <div class="flex items-center h-5">
+                                                <input id="hs-table-pagination-checkbox-all" type="checkbox"
+                                                    class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <label for="hs-table-pagination-checkbox-all"
+                                                    class="sr-only">Checkbox</label>
+                                            </div>
+                                        </th>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                                            Name</th>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Age
+                                        </th>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                                            Address</th>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">
+                                            Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                    <tr>
+                                        <td class="py-3 pl-4">
+                                            <div class="flex items-center h-5">
+                                                <input id="hs-table-pagination-checkbox-1" type="checkbox"
+                                                    class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <label for="hs-table-pagination-checkbox-1"
+                                                    class="sr-only">Checkbox</label>
+                                            </div>
+                                        </td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                                            John Brown</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            45</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            New York No. 1 Lake Park</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <a class="text-blue-500 hover:text-blue-700" href="#">Delete</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="py-3 pl-4">
+                                            <div class="flex items-center h-5">
+                                                <input id="hs-table-pagination-checkbox-2" type="checkbox"
+                                                    class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <label for="hs-table-pagination-checkbox-2"
+                                                    class="sr-only">Checkbox</label>
+                                            </div>
+                                        </td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                                            Jim Green</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            27</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            London No. 1 Lake Park</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <a class="text-blue-500 hover:text-blue-700" href="#">Delete</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="py-3 pl-4">
+                                            <div class="flex items-center h-5">
+                                                <input id="hs-table-pagination-checkbox-3" type="checkbox"
+                                                    class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <label for="hs-table-pagination-checkbox-3"
+                                                    class="sr-only">Checkbox</label>
+                                            </div>
+                                        </td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                                            Joe Black</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            31</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            Sidney No. 1 Lake Park</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <a class="text-blue-500 hover:text-blue-700" href="#">Delete</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="py-3 pl-4">
+                                            <div class="flex items-center h-5">
+                                                <input id="hs-table-pagination-checkbox-4" type="checkbox"
+                                                    class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <label for="hs-table-pagination-checkbox-4"
+                                                    class="sr-only">Checkbox</label>
+                                            </div>
+                                        </td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                                            Edward King</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            16</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            LA No. 1 Lake Park</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <a class="text-blue-500 hover:text-blue-700" href="#">Delete</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="py-3 pl-4">
+                                            <div class="flex items-center h-5">
+                                                <input id="hs-table-pagination-checkbox-5" type="checkbox"
+                                                    class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <label for="hs-table-pagination-checkbox-5"
+                                                    class="sr-only">Checkbox</label>
+                                            </div>
+                                        </td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                                            Jim Red</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            45</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            Melbourne No. 1 Lake Park</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <a class="text-blue-500 hover:text-blue-700" href="#">Delete</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="py-1 px-4">
+                            <nav class="flex items-center space-x-2">
+                                <a class="text-gray-400 hover:text-blue-600 p-4 inline-flex items-center gap-2 font-medium rounded-md"
+                                    href="#">
+                                    <span aria-hidden="true">«</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="w-10 h-10 bg-blue-500 text-white p-4 inline-flex items-center text-sm font-medium rounded-full"
+                                    href="#" aria-current="page">1</a>
+                                <a class="w-10 h-10 text-gray-400 hover:text-blue-600 p-4 inline-flex items-center text-sm font-medium rounded-full"
+                                    href="#">2</a>
+                                <a class="w-10 h-10 text-gray-400 hover:text-blue-600 p-4 inline-flex items-center text-sm font-medium rounded-full"
+                                    href="#">3</a>
+                                <a class="text-gray-400 hover:text-blue-600 p-4 inline-flex items-center gap-2 font-medium rounded-md"
+                                    href="#">
+                                    <span class="sr-only">Next</span>
+                                    <span aria-hidden="true">»</span>
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <ol class="flex items-center mt-5 whitespace-nowrap min-w-0" aria-label="Breadcrumb">
-            <li class="text-sm">
-                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
-                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
-                        height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
-                        <path fill-rule="evenodd"
-                            d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
-                    </svg>
-                    home
-                    <svg class="flex-shrink-0 mx-3 overflow-visible h-2.5 w-2.5 text-gray-400 dark:text-gray-600"
-                        width="16" height="16" viewBox="0 0 16 16" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                </a>
-            </li>
-            <li class="text-sm">
-                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
-                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
-                        height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path
-                            d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z" />
-                        <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                    </svg>
-                    bar chart
-                </a>
-            </li>
-        </ol>
-        <div class="grid mt-5">
-            <div class="w-full">
-                <canvas id="barChart"></canvas>
-            </div>
-        </div>
-        <ol class="flex items-center mt-5 whitespace-nowrap min-w-0" aria-label="Breadcrumb">
-            <li class="text-sm">
-                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
-                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
-                        height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
-                        <path fill-rule="evenodd"
-                            d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
-                    </svg>
-                    home
-                    <svg class="flex-shrink-0 mx-3 overflow-visible h-2.5 w-2.5 text-gray-400 dark:text-gray-600"
-                        width="16" height="16" viewBox="0 0 16 16" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                </a>
-            </li>
-            <li class="text-sm">
-                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
-                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
-                        height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path
-                            d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z" />
-                        <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                    </svg>
-                    pie chart
-                </a>
-            </li>
-        </ol>
-        <div class="grid grid-cols-3 mt-5 gap-4">
-            <div class="w-full">
-                <canvas id="pieChart1"></canvas>
-            </div>
-            <div class="w-full">
-                <canvas id="pieChart2"></canvas>
-            </div>
-            <div class="w-full">
-                <canvas id="pieChart3"></canvas>
-            </div>
-        </div>
-        <ol class="flex items-center mt-5 whitespace-nowrap min-w-0" aria-label="Breadcrumb">
-            <li class="text-sm">
-                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
-                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
-                        height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
-                        <path fill-rule="evenodd"
-                            d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
-                    </svg>
-                    home
-                    <svg class="flex-shrink-0 mx-3 overflow-visible h-2.5 w-2.5 text-gray-400 dark:text-gray-600"
-                        width="16" height="16" viewBox="0 0 16 16" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                </a>
-            </li>
-            <li class="text-sm">
-                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
-                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
-                        height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path
-                            d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z" />
-                        <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                    </svg>
-                    line chart
-                </a>
-            </li>
-        </ol>
-        <div class="grid mt-5">
-            <div class="w-full">
-                <canvas id="lineChart"></canvas>
-            </div>
-        </div>
+        {{-- end table --}}
         <!-- End Page Heading -->
     </main>
     <!-- End Content -->
