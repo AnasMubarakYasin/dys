@@ -12,6 +12,7 @@
     @vite('resources/css/tailwind.css')
     @vite('resources/js/preline.js')
     @vite('resources/js/components/apanel/index.js')
+    @vite('resources/js/components/apanel/chart.js')
 </head>
 
 <body class="bg-gray-50 dark:bg-slate-900">
@@ -55,13 +56,24 @@
 
                 <div class="flex flex-row text-slate-900 items-center gap-4 justify-end">
                     <button type="button"
-                        class="inline-flex flex-shrink-0 justify-center items-center gap-2 h-[2.375rem] w-[2.375rem] rounded-full font-medium bg-white text-gray-700 align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition-all text-xs dark:bg-gray-800 dark:hover:bg-slate-800 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800">
+                        class="hs-dark-mode-active:hidden block hs-dark-mode group flex-shrink-0 justify-center items-center gap-2 h-[2.375rem] w-[2.375rem] rounded-full font-medium bg-white text-gray-700 align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition-all text-xs dark:bg-gray-800 dark:hover:bg-slate-800 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800"
+                        data-hs-theme-click-value="dark">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6">
+                            stroke="currentColor" class="w-6 h-6 inline">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
                         </svg>
                     </button>
+                    <button type="button"
+                        class="hs-dark-mode-active:block hidden hs-dark-mode group flex-shrink-0 justify-center items-center gap-2 h-[2.375rem] w-[2.375rem] rounded-full font-medium bg-white text-gray-700 align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition-all text-xs dark:bg-gray-800 dark:hover:bg-slate-800 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800"
+                        data-hs-theme-click-value="light">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 inline">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                        </svg>
+                    </button>
+
                     {{-- <button type="button"
                         class="inline-flex flex-shrink-0 justify-center items-center gap-2 h-[2.375rem] w-[2.375rem] rounded-full font-medium bg-white text-gray-700 align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition-all text-xs dark:bg-gray-800 dark:hover:bg-slate-800 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -164,11 +176,11 @@
                             <path fill-rule="evenodd"
                                 d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
                         </svg>
-                        sashboard
+                        dashboard
                     </a>
                 </li>
                 <li><a class="flex capitalize items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300"
-                        href="javascript:;">
+                        href="{{ route('web.administrator.data_pemuda') }}">
                         <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" viewBox="0 0 16 16">
                             <path
@@ -195,9 +207,9 @@
     <!-- Content -->
     <main id="application-main" class="w-full p-4 sm:px-8 sm:py-4 sm:pl-72 transition-all">
         <!-- Page Heading -->
-        {{-- <ol class="flex items-center whitespace-nowrap min-w-0 pb-3" aria-label="Breadcrumb">
+        <ol class="flex items-center whitespace-nowrap min-w-0 pb-3" aria-label="Breadcrumb">
             <li class="text-sm">
-                <a class="flex items-center text-gray-500 hover:text-blue-600" href="#">
+                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
                     <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
                         height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -205,7 +217,7 @@
                         <path fill-rule="evenodd"
                             d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
                     </svg>
-                    Home
+                    home
                     <svg class="flex-shrink-0 mx-3 overflow-visible h-2.5 w-2.5 text-gray-400 dark:text-gray-600"
                         width="16" height="16" viewBox="0 0 16 16" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -215,14 +227,110 @@
                 </a>
             </li>
             <li class="text-sm">
-                <a class="flex items-center text-gray-500 hover:text-blue-600" href="#">
+                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
                     <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
                         height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path
                             d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z" />
                         <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                     </svg>
-                    App Center
+                    total jumlah pemuda perkota
+                </a>
+            </li>
+        </ol>
+        <div class="grid grid-cols-2 sm:grid-cols-4 pb-3 gap-4">
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+            <div
+                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
+                <span class="text-[25px] font-bold">389.591</span>
+            </div>
+        </div>
+        <ol class="flex items-center mt-5 whitespace-nowrap min-w-0" aria-label="Breadcrumb">
+            <li class="text-sm">
+                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
+                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
+                        height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                        <path fill-rule="evenodd"
+                            d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                    </svg>
+                    home
                     <svg class="flex-shrink-0 mx-3 overflow-visible h-2.5 w-2.5 text-gray-400 dark:text-gray-600"
                         width="16" height="16" viewBox="0 0 16 16" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -231,32 +339,100 @@
                     </svg>
                 </a>
             </li>
-            <li class="text-sm font-semibold text-gray-800 truncate dark:text-gray-200" aria-current="page">
-                Application
+            <li class="text-sm">
+                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
+                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
+                        height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z" />
+                        <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    </svg>
+                    bar chart
+                </a>
             </li>
-        </ol> --}}
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+        </ol>
+        <div class="grid mt-5">
+            <div class="w-full">
+                <canvas id="barChart"></canvas>
             </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+        </div>
+        <ol class="flex items-center mt-5 whitespace-nowrap min-w-0" aria-label="Breadcrumb">
+            <li class="text-sm">
+                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
+                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
+                        height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                        <path fill-rule="evenodd"
+                            d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                    </svg>
+                    home
+                    <svg class="flex-shrink-0 mx-3 overflow-visible h-2.5 w-2.5 text-gray-400 dark:text-gray-600"
+                        width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </a>
+            </li>
+            <li class="text-sm">
+                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
+                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
+                        height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z" />
+                        <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    </svg>
+                    pie chart
+                </a>
+            </li>
+        </ol>
+        <div class="grid grid-cols-3 mt-5 gap-4">
+            <div class="w-full">
+                <canvas id="pieChart1"></canvas>
             </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+            <div class="w-full">
+                <canvas id="pieChart2"></canvas>
             </div>
-            <div
-                class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+            <div class="w-full">
+                <canvas id="pieChart3"></canvas>
             </div>
-
+        </div>
+        <ol class="flex items-center mt-5 whitespace-nowrap min-w-0" aria-label="Breadcrumb">
+            <li class="text-sm">
+                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
+                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
+                        height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                        <path fill-rule="evenodd"
+                            d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                    </svg>
+                    home
+                    <svg class="flex-shrink-0 mx-3 overflow-visible h-2.5 w-2.5 text-gray-400 dark:text-gray-600"
+                        width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </a>
+            </li>
+            <li class="text-sm">
+                <a class="flex capitalize items-center text-gray-500 hover:text-blue-600" href="#">
+                    <svg class="flex-shrink-0 mr-3 h-4 w-4 text-gray-600 dark:text-gray-600" width="16"
+                        height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z" />
+                        <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    </svg>
+                    line chart
+                </a>
+            </li>
+        </ol>
+        <div class="grid mt-5">
+            <div class="w-full">
+                <canvas id="lineChart"></canvas>
+            </div>
         </div>
         <!-- End Page Heading -->
     </main>
