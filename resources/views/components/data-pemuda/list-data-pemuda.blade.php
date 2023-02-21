@@ -212,7 +212,7 @@
             <div class="-m-1.5 overflow-x-auto">
                 <div class="p-1.5 min-w-full inline-block align-middle">
                     <div class="border rounded-lg divide-y divide-gray-200 dark:border-gray-700 dark:divide-gray-700">
-                        <div class="flex justify-between py-3 px-4">
+                        <div class="flex py-3 px-4">
                             {{-- <div class="relative max-w-xs">
                                 <label for="hs-table-with-pagination-search" class="sr-only">Search</label>
                                 <input type="text" name="hs-table-with-pagination-search"
@@ -235,6 +235,16 @@
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
+                            </button>
+                            <button type="button"
+                                class="capitalize ml-3 py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-rose-600 text-white hover:bg-[#f09a32] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
+                                hapus semua data
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                </svg>
+
                             </button>
 
                             <div id="hs-vertically-centered-modal"
@@ -293,14 +303,6 @@
                             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                                 <thead class="bg-gray-50 dark:bg-gray-700">
                                     <tr>
-                                        <th scope="col" class="py-3 px-4 pr-0">
-                                            <div class="flex items-center h-5">
-                                                <input id="hs-table-pagination-checkbox-all" type="checkbox"
-                                                    class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
-                                                <label for="hs-table-pagination-checkbox-all"
-                                                    class="sr-only">Checkbox</label>
-                                            </div>
-                                        </th>
                                         <th scope="col"
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                                             Name</th>
@@ -317,14 +319,6 @@
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                                     <tr>
-                                        <td class="py-3 pl-4">
-                                            <div class="flex items-center h-5">
-                                                <input id="hs-table-pagination-checkbox-1" type="checkbox"
-                                                    class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
-                                                <label for="hs-table-pagination-checkbox-1"
-                                                    class="sr-only">Checkbox</label>
-                                            </div>
-                                        </td>
                                         <td
                                             class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
                                             John Brown</td>
@@ -340,14 +334,6 @@
                                     </tr>
 
                                     <tr>
-                                        <td class="py-3 pl-4">
-                                            <div class="flex items-center h-5">
-                                                <input id="hs-table-pagination-checkbox-2" type="checkbox"
-                                                    class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
-                                                <label for="hs-table-pagination-checkbox-2"
-                                                    class="sr-only">Checkbox</label>
-                                            </div>
-                                        </td>
                                         <td
                                             class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
                                             Jim Green</td>
@@ -363,14 +349,6 @@
                                     </tr>
 
                                     <tr>
-                                        <td class="py-3 pl-4">
-                                            <div class="flex items-center h-5">
-                                                <input id="hs-table-pagination-checkbox-3" type="checkbox"
-                                                    class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
-                                                <label for="hs-table-pagination-checkbox-3"
-                                                    class="sr-only">Checkbox</label>
-                                            </div>
-                                        </td>
                                         <td
                                             class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
                                             Joe Black</td>
@@ -386,14 +364,6 @@
                                     </tr>
 
                                     <tr>
-                                        <td class="py-3 pl-4">
-                                            <div class="flex items-center h-5">
-                                                <input id="hs-table-pagination-checkbox-4" type="checkbox"
-                                                    class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
-                                                <label for="hs-table-pagination-checkbox-4"
-                                                    class="sr-only">Checkbox</label>
-                                            </div>
-                                        </td>
                                         <td
                                             class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
                                             Edward King</td>
@@ -409,14 +379,6 @@
                                     </tr>
 
                                     <tr>
-                                        <td class="py-3 pl-4">
-                                            <div class="flex items-center h-5">
-                                                <input id="hs-table-pagination-checkbox-5" type="checkbox"
-                                                    class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
-                                                <label for="hs-table-pagination-checkbox-5"
-                                                    class="sr-only">Checkbox</label>
-                                            </div>
-                                        </td>
                                         <td
                                             class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
                                             Jim Red</td>
