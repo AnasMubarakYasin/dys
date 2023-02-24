@@ -24,3 +24,6 @@ Route::get('administrator', function () {
 Route::get('administrator/data_pemuda', function () {
   return view('pages.administrator.data_pemuda');
 })->name('web.administrator.data_pemuda');
+
+Route::get('/youth', 'YouthController@index')->name('web.youth.index');
+Route::post('/youth/import', 'YouthController@import')->name('web.youth.import');

@@ -2,6 +2,7 @@
 
 namespace App\View\Components\DataPemuda;
 
+use App\Models\Youth;
 use Illuminate\View\Component;
 
 class ListDataPemuda extends Component
@@ -23,6 +24,8 @@ class ListDataPemuda extends Component
      */
     public function render()
     {
-        return view('components.data-pemuda.list-data-pemuda');
+        return view('components.data-pemuda.list-data-pemuda', [
+            'data' => Youth::paginate(),
+        ]);
     }
 }

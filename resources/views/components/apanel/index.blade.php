@@ -148,7 +148,7 @@
                     </a>
                 </li>
                 <li><a class="flex capitalize items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300"
-                        href="{{ route('web.administrator.data_pemuda') }}">
+                        href="{{ route('web.youth.index') }}">
                         <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" viewBox="0 0 16 16">
                             <path
