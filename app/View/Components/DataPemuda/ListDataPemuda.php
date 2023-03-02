@@ -25,7 +25,7 @@ class ListDataPemuda extends Component
     public function render()
     {
         return view('components.data-pemuda.list-data-pemuda', [
-            'data' => Youth::paginate(),
+            'data' => Youth::paginate(request()->query->get("perpage", 25)),
         ]);
     }
 }

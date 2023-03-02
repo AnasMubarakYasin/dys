@@ -203,7 +203,7 @@
       </li>
     </ol>
     {{-- table --}}
-    <div class="flex flex-col">
+    <div class="flex flex-col bg-white dark:bg-gray-800">
       <div class="-m-1.5 overflow-x-auto">
         <div class="p-1.5 min-w-full inline-block align-middle">
           <div class="border rounded-lg divide-y divide-gray-200 dark:border-gray-700 dark:divide-gray-700">
@@ -231,7 +231,7 @@
                     d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </button>
-              <button type="button"
+              <button type="button" data-hs-overlay="#delete-confirm"
                 class="capitalize ml-3 py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-rose-600 text-white hover:bg-[#f09a32] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
                 hapus semua data
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -291,6 +291,50 @@
                   </div>
                 </div>
               </div>
+              <div id="delete-confirm"
+                class="hs-overlay hidden w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto">
+                <div
+                  class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] grid items-center">
+                  <div
+                    class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+                    <div class="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700">
+                      <h3 class="font-bold text-gray-800 dark:text-white">
+                        Hapus Semua Data
+                      </h3>
+                      <button type="button"
+                        class="hs-dropdown-toggle inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded-md text-gray-500 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white transition-all text-sm dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800"
+                        data-hs-overlay="#delete-confirm">
+                        <span class="sr-only">Close</span>
+                        <svg class="w-3.5 h-3.5" width="8" height="8" viewBox="0 0 8 8" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M0.258206 1.00652C0.351976 0.912791 0.479126 0.860131 0.611706 0.860131C0.744296 0.860131 0.871447 0.912791 0.965207 1.00652L3.61171 3.65302L6.25822 1.00652C6.30432 0.958771 6.35952 0.920671 6.42052 0.894471C6.48152 0.868271 6.54712 0.854471 6.61352 0.853901C6.67992 0.853321 6.74572 0.865971 6.80722 0.891111C6.86862 0.916251 6.92442 0.953381 6.97142 1.00032C7.01832 1.04727 7.05552 1.1031 7.08062 1.16454C7.10572 1.22599 7.11842 1.29183 7.11782 1.35822C7.11722 1.42461 7.10342 1.49022 7.07722 1.55122C7.05102 1.61222 7.01292 1.6674 6.96522 1.71352L4.31871 4.36002L6.96522 7.00648C7.05632 7.10078 7.10672 7.22708 7.10552 7.35818C7.10442 7.48928 7.05182 7.61468 6.95912 7.70738C6.86642 7.80018 6.74102 7.85268 6.60992 7.85388C6.47882 7.85498 6.35252 7.80458 6.25822 7.71348L3.61171 5.06702L0.965207 7.71348C0.870907 7.80458 0.744606 7.85498 0.613506 7.85388C0.482406 7.85268 0.357007 7.80018 0.264297 7.70738C0.171597 7.61468 0.119017 7.48928 0.117877 7.35818C0.116737 7.22708 0.167126 7.10078 0.258206 7.00648L2.90471 4.36002L0.258206 1.71352C0.164476 1.61976 0.111816 1.4926 0.111816 1.36002C0.111816 1.22744 0.164476 1.10028 0.258206 1.00652Z"
+                            fill="currentColor" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="p-4 overflow-y-auto">
+                      <div>Apakah anda yakin?</div>
+                      <form id="delete_all_form" action="{{ route('web.youth.delete_all') }}" method="POST"
+                        enctype="multipart/form-data" class="hidden">
+                        @csrf
+                        @method('DELETE')
+                      </form>
+                    </div>
+                    <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-gray-700">
+                      <button form="delete_all_form"
+                        class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
+                        Iya
+                      </button>
+                      <button type="button"
+                        class="hs-dropdown-toggle py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                        data-hs-overlay="#delete-confirm">
+                        Batal
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             </div>
             <div class="overflow-hidden">
@@ -305,8 +349,8 @@
                     </th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                       Address</th>
-                    <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">
-                      Action</th>
+                    {{-- <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">
+                      Action</th> --}}
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -321,39 +365,153 @@
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
                         New York No. 1 Lake Park
                       </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                      {{-- <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <a class="text-blue-500 hover:text-blue-700" href="#">Delete</a>
-                      </td>
+                      </td> --}}
                     </tr>
                   @empty
                     <tr>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-                        Empty
+                      <td colspan="4"
+                        class="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-gray-800 dark:text-gray-200">
+                        Kosong
                       </td>
                     </tr>
                   @endforelse
                 </tbody>
               </table>
             </div>
-            <div class="py-1 px-4">
+            <div class="py-1 px-3 flex gap-2">
               <nav class="flex items-center space-x-2">
-                <a class="text-gray-400 hover:text-blue-600 p-4 inline-flex items-center gap-2 font-medium rounded-md"
-                  href="#">
-                  <span aria-hidden="true">«</span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="w-10 h-10 bg-[#ee7331] text-white p-4 inline-flex items-center text-sm font-medium rounded-full"
-                  href="#" aria-current="page">1</a>
-                <a class="w-10 h-10 text-gray-400 hover:text-blue-600 p-4 inline-flex items-center text-sm font-medium rounded-full"
-                  href="#">2</a>
-                <a class="w-10 h-10 text-gray-400 hover:text-blue-600 p-4 inline-flex items-center text-sm font-medium rounded-full"
-                  href="#">3</a>
-                <a class="text-gray-400 hover:text-blue-600 p-4 inline-flex items-center gap-2 font-medium rounded-md"
-                  href="#">
-                  <span class="sr-only">Next</span>
-                  <span aria-hidden="true">»</span>
-                </a>
+                <ul class="hidden sm:flex items-center -space-x-px">
+                  <li>
+                    @if ($data->previousPageUrl())
+                      <a href="{{ $data->previousPageUrl() }}"
+                        class="block py-2 px-2 text-gray-700 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-200 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                            clip-rule="evenodd"></path>
+                        </svg>
+                      </a>
+                    @else
+                      <button disabled
+                        class="cursor-not-allowed py-2 px-2 rounded-l-lg border border-gray-300 bg-gray-200 text-gray-700 dark:bg-gray-600 dark:border-gray-700 dark:text-gray-400">
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                            clip-rule="evenodd"></path>
+                        </svg>
+                      </button>
+                    @endif
+                  </li>
+                  @php
+                    $count = (int) floor($data->total() / $data->perPage());
+                  @endphp
+                  @if ($count && $count > 1)
+                    @php
+                      $index = 1;
+                      $limit = 5;
+                      if ($count > $limit) {
+                          $div = floor($limit / 2);
+                          $start = $data->currentPage() - $div;
+                          $percent = ($data->currentPage() / $count) * 100;
+                          $pages = [];
+                          if ($start < 1) {
+                              $start = 1;
+                          } else {
+                              if ($data->currentPage() + $div > $count) {
+                                  $start = $count - ($limit - 1);
+                              }
+                          }
+                          $pages = range($start, $limit + ($start - 1));
+                          if ($percent > 70) {
+                              $elements = [[1], '', $pages];
+                          } elseif ($percent < 30) {
+                              $elements = [$pages, '', [$count]];
+                          } else {
+                              $elements = [[1], '', $pages, '', [$count]];
+                          }
+                      } else {
+                          $elements = [range(1, $count)];
+                      }
+                    @endphp
+                    @foreach ($elements as $element)
+                      @if (is_string($element))
+                        <div
+                          class="grid place-content-center p-2 w-5 h-5 aspect-square box-content text-base text-gray-700 bg-white border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
+                          ...
+                        </div>
+                      @else
+                        @foreach ($element as $page)
+                          @if ($data->currentPage() == $page)
+                            <div
+                              class="grid place-content-center p-2 w-5 h-5 aspect-square box-content text-base text-blue-600 border border-blue-300 bg-blue-100 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+                              {{ $page }}
+                            </div>
+                          @else
+                            <a href="{{ $data->url($page) }}"
+                              class="grid place-content-center p-2 w-5 h-5 aspect-square box-content text-base text-gray-700 bg-white border border-gray-300 hover:bg-gray-200 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                              {{ $page }}
+                            </a>
+                          @endif
+                        @endforeach
+                      @endif
+                    @endforeach
+                  @endif
+                  <li>
+                    @if ($data->nextPageUrl())
+                      <a href="{{ $data->nextPageUrl() }}"
+                        class="block py-2 px-2 text-gray-700 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-200 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <span class="sr-only">Next</span>
+                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"></path>
+                        </svg>
+                      </a>
+                    @else
+                      <button disabled
+                        class="cursor-not-allowed py-2 px-2 rounded-r-lg border border-gray-300 bg-gray-200 text-gray-700 dark:bg-gray-600 dark:border-gray-700 dark:text-gray-400">
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"></path>
+                        </svg>
+                      </button>
+                    @endif
+                  </li>
+                </ul>
               </nav>
+              <form id="fperpage">
+                <select id="perpage" name="perpage"
+                  class="text-gray-700 bg-white border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 capitalize">
+                  @php
+                    $perpage = 25;
+                  @endphp
+                  @foreach (range(1, 3) as $per)
+                    <option @selected($data->perPage() == $per * $perpage) value="{{ $per * $perpage }}">
+                      {{ $per * $perpage }}
+                    </option>
+                  @endforeach
+                  <option @selected($data->perPage() == $data->total()) value="{{ $data->total() }}">
+                    Semua
+                  </option>
+                </select>
+              </form>
+              <script>
+                document.getElementById('perpage')?.addEventListener('change', (event) => {
+                  const search = new URLSearchParams(location.search)
+                  search.append('perpage', event.target.value)
+                  location.assign('?' + search.toString())
+                })
+              </script>
             </div>
           </div>
         </div>

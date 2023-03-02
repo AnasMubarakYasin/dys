@@ -26,4 +26,5 @@ Route::get('administrator/data_pemuda', function () {
 })->name('web.administrator.data_pemuda');
 
 Route::get('/youth', 'YouthController@index')->name('web.youth.index');
+Route::delete('/youth', 'YouthController@destroy_all')->name('web.youth.delete_all');
 Route::post('/youth/import', 'YouthController@import')->name('web.youth.import');

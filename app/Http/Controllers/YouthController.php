@@ -45,4 +45,9 @@ class YouthController extends Controller
     {
         //
     }
+    public function destroy_all()
+    {
+        Youth::truncate();
+        return back();
+    }
 }
