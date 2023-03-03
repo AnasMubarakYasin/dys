@@ -29,9 +29,11 @@
                   <span class="font-bold text-[24px] mt-5">log in to dashboard</span>
                   <span class="text-[14px]">Masukkan Username dan Password</span>
               </div>
-              <form action="{{ route('web.administrator') }}" class="grid gap-4 mt-10">
-                  <x-input icon="user" label="Name" placeholder="your name" />
-                  <x-inputs.password icon="lock-closed" label="Password" placeholder="password" />
+              <form action="{{ route('login') }}" method="POST" class="grid gap-4 mt-10">
+                  @csrf
+                  <x-input icon="user" type="text" name="name" label="Username" placeholder="your username" />
+                  <x-inputs.password icon="lock-closed" type="text" name="password" label="Password"
+                      placeholder="password" />
                   <x-button type="submit" outline icon="user" negative label="Login" />
               </form>
           </div>
