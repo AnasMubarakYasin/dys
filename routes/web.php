@@ -17,9 +17,7 @@ Route::get('/', function () {
   return view('login');
 });
 
-Route::get('administrator', function () {
-  return view('pages.administrator.dashboard');
-})->name('web.administrator');
+Route::get('administrator', 'User\Administrator@dashboard')->name('web.administrator');
 
 Route::get('administrator/data_pemuda', function () {
   return view('pages.administrator.data_pemuda');

@@ -1,3 +1,6 @@
+@props([
+    'yount' => 0,
+])
 <!DOCTYPE html>
 <html lang="en">
 
@@ -210,82 +213,82 @@
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
                 <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan MARISO</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan Mamajang</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan TAMALATE</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan rappocini</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan makassar</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan ujung pandang</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan wajo</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan bontoala</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan ujung tanah</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan kepulauan sangkarrang</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan tallo</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan panakukkang</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan manggala</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan biringkanaya</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
             <div
                 class="flex flex-col items-center divide-y divide-blue-200 bg-white border shadow-sm rounded-xl p-4 md:p-3 dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] dark:text-gray-400">
-                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kota Makassar</span>
-                <span class="text-[25px] font-bold">389.591</span>
+                <span class="text-center text-[13px]">Total Jumlah Pemuda di Kecamatan tamalanrea</span>
+                <span class="text-[25px] font-bold">{{ $yount }}</span>
             </div>
         </div>
         <ol class="flex items-center mt-5 whitespace-nowrap min-w-0" aria-label="Breadcrumb">
