@@ -409,7 +409,7 @@
                     @endif
                   </li>
                   @php
-                    $count = (int) floor($data->total() / $data->perPage());
+                    $count = (int) ceil($data->total() / $data->perPage());
                   @endphp
                   @if ($count && $count > 1)
                     @php
@@ -419,7 +419,6 @@
                           $div = floor($limit / 2);
                           $start = $data->currentPage() - $div;
                           $percent = ($data->currentPage() / $count) * 100;
-                          $pages = [];
                           if ($start < 1) {
                               $start = 1;
                           } else {
@@ -428,10 +427,10 @@
                               }
                           }
                           $pages = range($start, $limit + ($start - 1));
-                          if ($percent > 70) {
-                              $elements = [[1], '', $pages];
-                          } elseif ($percent < 30) {
+                          if (in_array(1, $pages)) {
                               $elements = [$pages, '', [$count]];
+                          } elseif (in_array($count, $pages)) {
+                              $elements = [[1], '', $pages];
                           } else {
                               $elements = [[1], '', $pages, '', [$count]];
                           }
