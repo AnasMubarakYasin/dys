@@ -348,7 +348,113 @@
                                     </div>
                                 </div>
                             </div>
-
+            </div>
+            <div class="overflow-hidden">
+              <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                <thead class="bg-gray-50 dark:bg-gray-700">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                      Name
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                      Town
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                      Address</th>
+                    {{-- <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">
+                      Action</th> --}}
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                  @forelse ($data as $item)
+                    <tr>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                        {{ $item->name }}
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                        {{ $item->town }}
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                        New York No. 1 Lake Park
+                      </td>
+                      {{-- <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <a class="text-blue-500 hover:text-blue-700" href="#">Delete</a>
+                      </td> --}}
+                    </tr>
+                  @empty
+                    <tr>
+                      <td colspan="4"
+                        class="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-gray-800 dark:text-gray-200">
+                        Kosong
+                      </td>
+                    </tr>
+                  @endforelse
+                </tbody>
+              </table>
+            </div>
+            <div class="py-1 px-3 flex gap-2">
+              <nav class="flex items-center space-x-2">
+                <ul class="hidden sm:flex items-center -space-x-px">
+                  <li>
+                    @if ($data->previousPageUrl())
+                      <a href="{{ $data->previousPageUrl() }}"
+                        class="block py-2 px-2 text-gray-700 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-200 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                            clip-rule="evenodd"></path>
+                        </svg>
+                      </a>
+                    @else
+                      <button disabled
+                        class="cursor-not-allowed py-2 px-2 rounded-l-lg border border-gray-300 bg-gray-200 text-gray-700 dark:bg-gray-600 dark:border-gray-700 dark:text-gray-400">
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                            clip-rule="evenodd"></path>
+                        </svg>
+                      </button>
+                    @endif
+                  </li>
+                  @php
+                    $count = (int) ceil($data->total() / $data->perPage());
+                  @endphp
+                  @if ($count && $count > 1)
+                    @php
+                      $index = 1;
+                      $limit = 5;
+                      if ($count > $limit) {
+                          $div = floor($limit / 2);
+                          $start = $data->currentPage() - $div;
+                          $percent = ($data->currentPage() / $count) * 100;
+                          if ($start < 1) {
+                              $start = 1;
+                          } else {
+                              if ($data->currentPage() + $div > $count) {
+                                  $start = $count - ($limit - 1);
+                              }
+                          }
+                          $pages = range($start, $limit + ($start - 1));
+                          if (in_array(1, $pages)) {
+                              $elements = [$pages, '', [$count]];
+                          } elseif (in_array($count, $pages)) {
+                              $elements = [[1], '', $pages];
+                          } else {
+                              $elements = [[1], '', $pages, '', [$count]];
+                          }
+                      } else {
+                          $elements = [range(1, $count)];
+                      }
+                    @endphp
+                    @foreach ($elements as $element)
+                      @if (is_string($element))
+                        <div
+                          class="grid place-content-center p-2 w-5 h-5 aspect-square box-content text-base text-gray-700 bg-white border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
+                          ...
                         </div>
                         <div class="overflow-hidden">
                             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
