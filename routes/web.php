@@ -15,13 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
   return view('login');
-});
+})->name('/');
+
+Route::get('/logout', 'UserController@logout')->name('logout_user');
 
 Route::get('administrator', 'User\Administrator@dashboard')->name('web.administrator');
 
 Route::get('administrator/data_pemuda', function () {
   return view('pages.administrator.data_pemuda');
 })->name('web.administrator.data_pemuda');
+
+Route::post('/auth_login', 'UserController@login')->name('login');
 
 Route::get('/youth', 'YouthController@index')->name('web.youth.index');
 Route::delete('/youth', 'YouthController@destroy_all')->name('web.youth.delete_all');
